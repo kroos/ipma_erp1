@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'logins',
     ],
 
     /*
@@ -38,12 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'logins',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'logins',
         ],
         // guards for forgot password
         'forgotpass' => [
@@ -81,7 +81,7 @@ return [
         // ],
 
         // using this to override Illuminate\Auth\EloquentUserProvider
-        'users' => [
+        'logins' => [
             'driver' => 'loginuserprovider',
             'model' => App\Model\Login::class,
             'table' => 'logins',
@@ -109,8 +109,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'logins' => [
+            'provider' => 'logins',
             'table' => 'password_resets',
             'expire' => 60,
         ],
