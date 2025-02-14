@@ -15,7 +15,7 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- Styles -->
-	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -37,15 +37,15 @@
 	</div>
 
 	<!-- Scripts -->
-	<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-	<script src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
-	<script src="{{ asset('js/ckeditor/adapters/jquery.js') }}"></script>
+	<script src="{{ mix('js/app.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/ckeditor/adapters/jquery.js') }}"></script>
 
 	<script type="text/javascript" src="{{ asset('js/ucwords.js') }}" ></script>
 
-	<script type="text/javascript" src="{{ asset('js/datetime-moment.js') }}" ></script>
-	<script type="text/javascript" src="{{ asset('js/dataTable-any-number.js') }}" ></script>
-	<script type="text/javascript" src="{{ asset('js/select2-dropdownPosition.js') }}" ></script>
+	<!-- <script type="text/javascript" src="{{ asset('js/datetime-moment.js') }}" ></script> -->
+	<!-- <script type="text/javascript" src="{{ asset('js/dataTable-any-number.js') }}" ></script> -->
+	<!-- <script type="text/javascript" src="{{ asset('js/select2-dropdownPosition.js') }}" ></script> -->
 
 	@include('layouts.jscript')
 </body>

@@ -37,15 +37,22 @@ class Login extends Authenticatable
 	];
 
 
-	public function getAuthIdentifierName()
-	{
-		return 'username';
-	}
+// 	public function getAuthIdentifierName()
+// 	{
+// 		return 'username';
+// 	}
+//
+// 	// for password
+// 	public function getAuthPassword()
+// 	{
+// 		return $this->password;
+// 	}
 
-	// for password
-	public function getAuthPassword()
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	// db relation belongsTo
+	public function belongstostaff()
 	{
-		return $this->password;
+		return $this->belongsTo('App\Model\Staff', 'staff_id');
 	}
 
 	public function belongtostaff()
@@ -53,27 +60,16 @@ class Login extends Authenticatable
 		return $this->belongsTo('App\Model\Staff', 'staff_id');
 	}
 
-    /**
-     * Get the e-mail address where password reset links are sent.
-     *
-     * @return string
-     */
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	public function getEmailForPasswordReset()
 	{
-		return $this->email;
+		return $this->belongtostaff->email;
 	}
 
 	// yang ni penting untuk hantaq email
 	public function routeNotificationForMail($notification)
 	{
-		return $this->email;
-	}
-
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	// db relation belongsTo
-	public function belongstostaff(): BelongsTo
-	{
-		return $this->belongsTo(\App\Model\Staff::class, 'staff_id');
+		return $this->belongtostaff->email;
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////

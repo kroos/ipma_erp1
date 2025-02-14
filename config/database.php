@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION_1', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,12 +41,12 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'unix_socket' => env('DB_SOCKET', ''),
+            'host' => env('DB_HOST_1', '127.0.0.1'),
+            'port' => env('DB_PORT_1', '3306'),
+            'database' => env('DB_DATABASE_1', 'forge'),
+            'username' => env('DB_USERNAME_1', 'forge'),
+            'password' => env('DB_PASSWORD_1', ''),
+            'unix_socket' => env('DB_SOCKET_1', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -74,11 +74,11 @@ return [
             // 'odbc' => true,
             // 'odbc_datasource_name' => 'sqlsrv',     // nama odbc
             //////////////////////////////////////////
-            'host' => env('DB_HOST1', 'localhost'),
-            'port' => env('DB_PORT1', '1433'),
-            'database' => env('DB_DATABASE1', 'forge'),
-            'username' => env('DB_USERNAME1', 'forge'),
-            'password' => env('DB_PASSWORD1', ''),
+            'host' => env('DB_HOST_2', 'localhost'),
+            'port' => env('DB_PORT_2', '1433'),
+            'database' => env('DB_DATABASE_2', 'forge'),
+            'username' => env('DB_USERNAME_2', 'forge'),
+            'password' => env('DB_PASSWORD_2', ''),
             'charset' => 'utf8',
             'prefix' => '',
         ],

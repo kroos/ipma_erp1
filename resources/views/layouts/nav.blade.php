@@ -10,7 +10,7 @@ use Carbon\CarbonPeriod;
 		<a class="navbar-brand" href="{{ url('/') }}">
 			<img src="{{ asset('images/logo2.png') }}" alt="{{ config('app.name') }}" title="{{ config('app.name') }}" class="img-fluid rounded" width="50%">
 		</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
@@ -32,7 +32,7 @@ $div = App\Model\Division::all();
 ?>
 @foreach($div as $divs)
 				<li class="nav-item">
-					<a class="nav-link 
+					<a class="nav-link
 @foreach( \Auth::user()->belongtostaff->belongtomanyposition as $val )
 										{{ ( $val->division_id == $divs->id )?'active':'disable' }}
 @endforeach
@@ -75,7 +75,7 @@ foreach( $st as $key ) {
 $allleaves = $tsb + $tshod + $tshr + $tdl;
 ?>
 				<li class="nav-item dropdown">
-					<a id="navbarDropdown" class="btn btn-sm btn-info text-white nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+					<a id="navbarDropdown" class="btn btn-sm btn-info text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 						{{ Auth::user()->belongtostaff->name }}
 @if( $allleaves > 0 )
 						<span class="badge badge-danger">{{ $allleaves }}</span>
